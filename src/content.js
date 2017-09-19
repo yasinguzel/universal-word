@@ -1,27 +1,51 @@
 document.addEventListener("keydown", function(event) {
   if (event.keyCode == 37) {
+    var subtitleWrapper = document.getElementById("caption-window-1");
     var subtitle = document.getElementsByClassName("captions-text")[0];
     var video = document.getElementsByTagName("video")[0];
-    subtitle.addEventListener("mouseenter", function() {
+
+    subtitleWrapper.addEventListener("mouseenter", function() {
       video.pause();
       var subtitleArray = subtitle.firstChild.textContent.split(" ");
-      subtitle.firstChild.innerHTML = "";
+      const inSubtitle = subtitle.firstChild,
+        style = window.getComputedStyle(inSubtitle),
+        firstFontSize = style.getPropertyValue("font-size");
+
+      inSubtitle.innerHTML = "";
+
       subtitleArray.map(word => {
-        var button = document.createElement("BUTTON");
-        var textnode = document.createTextNode(word);
-        button.appendChild(textnode);
-        subtitle.appendChild(button);
-        button.className += "subtitle-button";
-        button.addEventListener("click", function() {
-          var url = "https://glosbe.com/gapi/translate?from=eng&dest=tr&format=json&phrase="+word+"&pretty=true";
-          fetch(url).then(res => res.json())
-          .then((json) => {
-            console.log(json.tuc[0].phrase.text);
-          });
+        var span = document.createElement("SPAN");
+        var textnode = document.createTextNode(" " + word);
+        span.appendChild(textnode);
+        inSubtitle.appendChild(span);
+
+        span.addEventListener("mouseenter", function() {
+          var howMuchPxGrow = 11;
+          var newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
+          newFontSize += "px";
+          span.style.fontSize = newFontSize;
+        });
+
+        span.addEventListener("mouseleave", function() {
+          span.style.fontSize = firstFontSize;
+        });
+
+        span.addEventListener("click", function() {
+          console.log(word);
+          var url =
+            "https://glosbe.com/gapi/translate?from=eng&dest=tr&format=json&phrase=" +
+            word +
+            "&pretty=true";
+          fetch(url)
+            .then(res => res.json())
+            .then(json => {
+              console.log(json.tuc[0].phrase.text);
+            });
         });
       });
     });
-    subtitle.addEventListener("mouseleave", function() {
+
+    subtitleWrapper.addEventListener("mouseleave", function() {
       video.play();
     });
   }
