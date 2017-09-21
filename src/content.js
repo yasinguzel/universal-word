@@ -10,20 +10,36 @@ subtitleButton.addEventListener("click", function() {
 
       subtitleWrapper.addEventListener("mouseenter", function() {
         video.pause();
-        var subtitleArray = subtitle.firstChild.textContent.trim().split(/\s+/);
+        var subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
         const inSubtitle = subtitle.firstChild,
           style = window.getComputedStyle(inSubtitle),
           firstFontSize = style.getPropertyValue("font-size");
 
         inSubtitle.innerHTML = "";
 
-        subtitleArray.map(word => {
+        subtitleArray.map((word, index) => {
           var span = document.createElement("SPAN");
-          var textnode = document.createTextNode(" " + word);
 
-          span.appendChild(textnode);
-          inSubtitle.appendChild(span);
-          span.setAttribute("data-tooltip", "Loading...");
+          if (hasWhiteSpace(word)) {
+            word.split(/\s+/).map((element, index) => {
+              var textnode = document.createTextNode(" " + element);
+              if(index===1){
+                var br = document.createElement("br");
+                console.log(br);
+                inSubtitle.appendChild(br);
+              }
+              else{
+                span.appendChild(textnode);
+                inSubtitle.appendChild(span);
+                span.setAttribute("data-tooltip", "Loading...");
+              } 
+            });
+          } else {
+            var textnode = document.createTextNode(" " + word);
+            span.appendChild(textnode);
+            inSubtitle.appendChild(span);
+            span.setAttribute("data-tooltip", "Loading...");
+          }
 
           span.addEventListener("mouseenter", function() {
             var howMuchPxGrow = 5;
@@ -64,3 +80,7 @@ subtitleButton.addEventListener("click", function() {
     }, 3000);
   }
 });
+
+function hasWhiteSpace(s) {
+  return /\s/g.test(s);
+}
