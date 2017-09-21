@@ -6,7 +6,7 @@ document.addEventListener("keydown", function(event) {
 
     subtitleWrapper.addEventListener("mouseenter", function() {
       video.pause();
-      var subtitleArray = subtitle.firstChild.textContent.split(" ");
+      var subtitleArray = subtitle.firstChild.textContent.trim().split(/\s+/);
       const inSubtitle = subtitle.firstChild,
         style = window.getComputedStyle(inSubtitle),
         firstFontSize = style.getPropertyValue("font-size");
@@ -19,23 +19,27 @@ document.addEventListener("keydown", function(event) {
 
         span.appendChild(textnode);
         inSubtitle.appendChild(span);
-        span.setAttribute("data-tooltip","Loading...");
+        span.setAttribute("data-tooltip", "Loading...");
 
         span.addEventListener("mouseenter", function() {
-          var howMuchPxGrow = 11;
+          var howMuchPxGrow = 5;
           var newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
 
           newFontSize += "px";
           span.style.fontSize = newFontSize;
+
+          console.log(word);
+
           var url =
             "https://glosbe.com/gapi/translate?from=eng&dest=tr&format=json&phrase=" +
             word +
             "&pretty=true";
+
           fetch(url)
             .then(res => res.json())
             .then(json => {
               console.log(json.tuc[0].phrase.text);
-              span.setAttribute("data-tooltip",json.tuc[0].phrase.text);
+              span.setAttribute("data-tooltip", json.tuc[0].phrase.text);
             });
         });
 
