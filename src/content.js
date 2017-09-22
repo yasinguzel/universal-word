@@ -1,16 +1,47 @@
 var subtitleButton = document.getElementsByClassName(
   "ytp-subtitles-button ytp-button"
 )[0];
+
+function hasWhiteSpace(s) {
+  return /\s/g.test(s);
+}
+
+async function fetchTranslateResult(from, dest, phrase) {
+  const response = await fetch(
+    "https://glosbe.com/gapi/translate?from=" +
+      from +
+      "&dest=" +
+      dest +
+      "&format=json&phrase=" +
+      phrase +
+      "&pretty=true"
+  );
+
+  const data = await response.json();
+
+  var threeResult = "";
+
+  if (data.tuc[0]) {
+    threeResult = " 1. " + data.tuc[0].phrase.text;
+    threeResult += data.tuc[1].phrase ? " 2. " + data.tuc[1].phrase.text : "";
+    threeResult += data.tuc[2].phrase ? " 3. " + data.tuc[2].phrase.text : "";
+  } else {
+    threeResult = "no result";
+  }
+
+  return threeResult;
+}
+
 subtitleButton.addEventListener("click", function() {
   if (subtitleButton.getAttribute("aria-pressed")) {
     setTimeout(function() {
-      var subtitleWrapper = document.getElementById("caption-window-1");
-      var subtitle = document.getElementsByClassName("captions-text")[0];
-      var video = document.getElementsByTagName("video")[0];
+      const subtitleWrapper = document.getElementById("caption-window-1");
+      const subtitle = document.getElementsByClassName("captions-text")[0];
+      const video = document.getElementsByTagName("video")[0];
 
       subtitleWrapper.addEventListener("mouseenter", function() {
         video.pause();
-        var subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
+        const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
         const inSubtitle = subtitle.firstChild,
           style = window.getComputedStyle(inSubtitle),
           firstFontSize = style.getPropertyValue("font-size");
@@ -18,54 +49,38 @@ subtitleButton.addEventListener("click", function() {
         inSubtitle.innerHTML = "";
 
         subtitleArray.map((word, index) => {
-          var span = document.createElement("SPAN");
+          const span = document.createElement("SPAN");
 
           if (hasWhiteSpace(word)) {
             word.split(/\s+/).map((element, index) => {
-              var textnode = document.createTextNode(" " + element);
-              if(index===1){
-                var br = document.createElement("br");
-                console.log(br);
+              const textnode = document.createTextNode(" " + element);
+              if (index === 1) {
+                const br = document.createElement("br");
                 inSubtitle.appendChild(br);
               }
-              else{
-                span.appendChild(textnode);
-                inSubtitle.appendChild(span);
-                span.setAttribute("data-tooltip", "Loading...");
-              } 
+              span.appendChild(textnode);
+              inSubtitle.appendChild(span);
+              span.setAttribute("data-tooltip", "Loading...");
             });
           } else {
-            var textnode = document.createTextNode(" " + word);
+            const textnode = document.createTextNode(" " + word);
             span.appendChild(textnode);
             inSubtitle.appendChild(span);
             span.setAttribute("data-tooltip", "Loading...");
           }
 
           span.addEventListener("mouseenter", function() {
-            var howMuchPxGrow = 5;
-            var newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
+            const howMuchPxGrow = 5;
+            let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
 
             newFontSize += "px";
             span.style.fontSize = newFontSize;
 
-            var url =
-              "https://glosbe.com/gapi/translate?from=eng&dest=tr&format=json&phrase=" +
-              word +
-              "&pretty=true";
+            const result = fetchTranslateResult("eng", "tr", word);
 
-            fetch(url)
-              .then(res => res.json())
-              .then(json => {
-                var threeResult =
-                  " 1. " +
-                  json.tuc[0].phrase.text +
-                  " 2. " +
-                  json.tuc[1].phrase.text +
-                  " 3. " +
-                  json.tuc[2].phrase.text;
-
-                span.setAttribute("data-tooltip", threeResult);
-              });
+            result.then(translatedWords =>
+              span.setAttribute("data-tooltip", translatedWords)
+            );
           });
 
           span.addEventListener("mouseleave", function() {
@@ -80,7 +95,3 @@ subtitleButton.addEventListener("click", function() {
     }, 3000);
   }
 });
-
-function hasWhiteSpace(s) {
-  return /\s/g.test(s);
-}
