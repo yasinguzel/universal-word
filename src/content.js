@@ -21,11 +21,17 @@ async function fetchTranslateResult(from, dest, phrase) {
 
   var threeResult = "";
 
-  data.tuc.map((translate, index) => {
-    if (!(index >= 3)) {
-      threeResult += " " + index + 1 + ". " + translate.phrase.text;
+  for (var index = 0; index < 3; index++) {
+    if (
+      data.tuc[index] &&
+      data.tuc[index].phrase &&
+      data.tuc[index].phrase.text
+    ) {
+      threeResult += " " + (index + 1) + ". " + data.tuc[index].phrase.text;
+    } else if (index === 0) {
+      threeResult = "no result";
     }
-  });
+  }
 
   return threeResult;
 }
