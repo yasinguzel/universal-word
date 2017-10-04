@@ -1,10 +1,12 @@
-var subtitleButton = document.getElementsByClassName(
+let subtitleButton = document.getElementsByClassName(
   "ytp-subtitles-button ytp-button"
 )[0];
 
-var fullScreenButton = document.getElementsByClassName(
+let fullScreenButton = document.getElementsByClassName(
   "ytp-fullscreen-button ytp-button"
 )[0];
+
+let arrayButton = [subtitleButton, fullScreenButton];
 
 function hasWhiteSpace(s) {
   return /\s/g.test(s);
@@ -23,9 +25,9 @@ async function fetchTranslateResult(from, dest, phrase) {
 
   const data = await response.json();
 
-  var threeResult = "";
+  let threeResult = "";
 
-  for (var index = 0; index < 3; index++) {
+  for (let index = 0; index < 3; index++) {
     if (
       data.tuc[index] &&
       data.tuc[index].phrase &&
@@ -102,14 +104,14 @@ function main() {
   }, 3000);
 }
 
-subtitleButton.addEventListener("click", () => {
-  if (subtitleButton.getAttribute("aria-pressed")) {
-    main();
-  }
-});
+function listenForSubtitleCase(object) {
+  object.addEventListener("click", () => {
+    if (subtitleButton.getAttribute("aria-pressed")) {
+      main();
+    }
+  });
+}
 
-fullScreenButton.addEventListener("click", () => {
-  if (subtitleButton.getAttribute("aria-pressed")) {
-    main();
-  }
+arrayButton.map(object => {
+  listenForSubtitleCase(object);
 });
