@@ -1,3 +1,5 @@
+let MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
 let subtitleButton = document.getElementsByClassName(
   "ytp-subtitles-button ytp-button"
 )[0];
@@ -5,6 +7,8 @@ let subtitleButton = document.getElementsByClassName(
 let fullScreenButton = document.getElementsByClassName(
   "ytp-fullscreen-button ytp-button"
 )[0];
+
+let player = document.getElementById("movie_player");
 
 let arrayButton = [subtitleButton, fullScreenButton];
 
@@ -43,71 +47,84 @@ async function fetchTranslateResult(from, dest, phrase) {
 }
 
 function main() {
-  setTimeout(() => {
-    const subtitleWrapper = document.getElementById("caption-window-1");
-    const subtitle = document.getElementsByClassName("captions-text")[0];
-    const video = document.getElementsByTagName("video")[0];
+  const subtitleWrapper = document.getElementById("caption-window-1");
+  const subtitle = document.getElementsByClassName("captions-text")[0];
+  const video = document.getElementsByTagName("video")[0];
 
-    subtitleWrapper.addEventListener("mouseenter", () => {
-      video.pause();
-      const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
-      const inSubtitle = subtitle.firstChild,
-        style = window.getComputedStyle(inSubtitle),
-        firstFontSize = style.getPropertyValue("font-size");
+  subtitleWrapper.addEventListener("mouseenter", () => {
+    video.pause();
+    const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
+    const inSubtitle = subtitle.firstChild,
+      style = window.getComputedStyle(inSubtitle),
+      firstFontSize = style.getPropertyValue("font-size");
 
-      inSubtitle.innerHTML = "";
+    inSubtitle.innerHTML = "";
 
-      subtitleArray.map((word, index) => {
-        const span = document.createElement("SPAN");
+    subtitleArray.map((word, index) => {
+      const span = document.createElement("SPAN");
 
-        if (hasWhiteSpace(word)) {
-          word.split(/\s+/).map((element, index) => {
-            const textnode = document.createTextNode(" " + element);
-            if (index === 1) {
-              const br = document.createElement("br");
-              inSubtitle.appendChild(br);
-            }
-            span.appendChild(textnode);
-            inSubtitle.appendChild(span);
-            span.setAttribute("data-tooltip", "Loading...");
-          });
-        } else {
-          const textnode = document.createTextNode(" " + word);
+      if (hasWhiteSpace(word)) {
+        word.split(/\s+/).map((element, index) => {
+          const textnode = document.createTextNode(" " + element);
+          if (index === 1) {
+            const br = document.createElement("br");
+            inSubtitle.appendChild(br);
+          }
           span.appendChild(textnode);
           inSubtitle.appendChild(span);
           span.setAttribute("data-tooltip", "Loading...");
-        }
-
-        span.addEventListener("mouseenter", () => {
-          const howMuchPxGrow = 5;
-          let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
-
-          newFontSize += "px";
-          span.style.fontSize = newFontSize;
-
-          const result = fetchTranslateResult("eng", "tr", word);
-
-          result.then(translatedWords =>
-            span.setAttribute("data-tooltip", translatedWords)
-          );
         });
+      } else {
+        const textnode = document.createTextNode(" " + word);
+        span.appendChild(textnode);
+        inSubtitle.appendChild(span);
+        span.setAttribute("data-tooltip", "Loading...");
+      }
 
-        span.addEventListener("mouseleave", () => {
-          span.style.fontSize = firstFontSize;
-        });
+      span.addEventListener("mouseenter", () => {
+        const howMuchPxGrow = 5;
+        let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
+
+        newFontSize += "px";
+        span.style.fontSize = newFontSize;
+
+        const result = fetchTranslateResult("eng", "tr", word);
+
+        result.then(translatedWords =>
+          span.setAttribute("data-tooltip", translatedWords)
+        );
+      });
+
+      span.addEventListener("mouseleave", () => {
+        span.style.fontSize = firstFontSize;
       });
     });
+  });
 
-    subtitleWrapper.addEventListener("mouseleave", () => {
-      video.play();
+  subtitleWrapper.addEventListener("mouseleave", () => {
+    video.play();
+  });
+}
+
+function runObserver() {
+  let observer = new MutationObserver(mutations => {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes[0].id === "caption-window-1") {
+        main();
+      }
     });
-  }, 3000);
+  });
+  observer.observe(player, {
+    attributes: true,
+    childList: true,
+    characterData: true
+  });
 }
 
 function listenForSubtitleCase(object) {
   object.addEventListener("click", () => {
     if (subtitleButton.getAttribute("aria-pressed")) {
-      main();
+      runObserver();
     }
   });
 }
