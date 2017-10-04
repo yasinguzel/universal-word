@@ -2,6 +2,10 @@ var subtitleButton = document.getElementsByClassName(
   "ytp-subtitles-button ytp-button"
 )[0];
 
+var fullScreenButton = document.getElementsByClassName(
+  "ytp-fullscreen-button ytp-button"
+)[0];
+
 function hasWhiteSpace(s) {
   return /\s/g.test(s);
 }
@@ -36,66 +40,76 @@ async function fetchTranslateResult(from, dest, phrase) {
   return threeResult;
 }
 
-subtitleButton.addEventListener("click", function() {
-  if (subtitleButton.getAttribute("aria-pressed")) {
-    setTimeout(function() {
-      const subtitleWrapper = document.getElementById("caption-window-1");
-      const subtitle = document.getElementsByClassName("captions-text")[0];
-      const video = document.getElementsByTagName("video")[0];
+function main() {
+  setTimeout(() => {
+    const subtitleWrapper = document.getElementById("caption-window-1");
+    const subtitle = document.getElementsByClassName("captions-text")[0];
+    const video = document.getElementsByTagName("video")[0];
 
-      subtitleWrapper.addEventListener("mouseenter", function() {
-        video.pause();
-        const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
-        const inSubtitle = subtitle.firstChild,
-          style = window.getComputedStyle(inSubtitle),
-          firstFontSize = style.getPropertyValue("font-size");
+    subtitleWrapper.addEventListener("mouseenter", () => {
+      video.pause();
+      const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
+      const inSubtitle = subtitle.firstChild,
+        style = window.getComputedStyle(inSubtitle),
+        firstFontSize = style.getPropertyValue("font-size");
 
-        inSubtitle.innerHTML = "";
+      inSubtitle.innerHTML = "";
 
-        subtitleArray.map((word, index) => {
-          const span = document.createElement("SPAN");
+      subtitleArray.map((word, index) => {
+        const span = document.createElement("SPAN");
 
-          if (hasWhiteSpace(word)) {
-            word.split(/\s+/).map((element, index) => {
-              const textnode = document.createTextNode(" " + element);
-              if (index === 1) {
-                const br = document.createElement("br");
-                inSubtitle.appendChild(br);
-              }
-              span.appendChild(textnode);
-              inSubtitle.appendChild(span);
-              span.setAttribute("data-tooltip", "Loading...");
-            });
-          } else {
-            const textnode = document.createTextNode(" " + word);
+        if (hasWhiteSpace(word)) {
+          word.split(/\s+/).map((element, index) => {
+            const textnode = document.createTextNode(" " + element);
+            if (index === 1) {
+              const br = document.createElement("br");
+              inSubtitle.appendChild(br);
+            }
             span.appendChild(textnode);
             inSubtitle.appendChild(span);
             span.setAttribute("data-tooltip", "Loading...");
-          }
-
-          span.addEventListener("mouseenter", function() {
-            const howMuchPxGrow = 5;
-            let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
-
-            newFontSize += "px";
-            span.style.fontSize = newFontSize;
-
-            const result = fetchTranslateResult("eng", "tr", word);
-
-            result.then(translatedWords =>
-              span.setAttribute("data-tooltip", translatedWords)
-            );
           });
+        } else {
+          const textnode = document.createTextNode(" " + word);
+          span.appendChild(textnode);
+          inSubtitle.appendChild(span);
+          span.setAttribute("data-tooltip", "Loading...");
+        }
 
-          span.addEventListener("mouseleave", function() {
-            span.style.fontSize = firstFontSize;
-          });
+        span.addEventListener("mouseenter", () => {
+          const howMuchPxGrow = 5;
+          let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
+
+          newFontSize += "px";
+          span.style.fontSize = newFontSize;
+
+          const result = fetchTranslateResult("eng", "tr", word);
+
+          result.then(translatedWords =>
+            span.setAttribute("data-tooltip", translatedWords)
+          );
+        });
+
+        span.addEventListener("mouseleave", () => {
+          span.style.fontSize = firstFontSize;
         });
       });
+    });
 
-      subtitleWrapper.addEventListener("mouseleave", function() {
-        video.play();
-      });
-    }, 3000);
+    subtitleWrapper.addEventListener("mouseleave", () => {
+      video.play();
+    });
+  }, 3000);
+}
+
+subtitleButton.addEventListener("click", () => {
+  if (subtitleButton.getAttribute("aria-pressed")) {
+    main();
+  }
+});
+
+fullScreenButton.addEventListener("click", () => {
+  if (subtitleButton.getAttribute("aria-pressed")) {
+    main();
   }
 });
