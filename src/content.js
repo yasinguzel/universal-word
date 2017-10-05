@@ -6,10 +6,6 @@ let subtitleButton = document.getElementsByClassName(
 
 let player = document.getElementById("movie_player");
 
-function hasWhiteSpace(s) {
-  return /\s/g.test(s);
-}
-
 async function fetchTranslateResult(from, dest, phrase) {
   const response = await fetch(
     "https://glosbe.com/gapi/translate?from=" +
@@ -47,7 +43,7 @@ function main() {
 
   subtitleWrapper.addEventListener("mouseenter", () => {
     video.pause();
-    const subtitleArray = subtitle.firstChild.textContent.trim().split(" ");
+    const subtitleArray = subtitle.firstChild.textContent.trim().split(/\s+/);
     const inSubtitle = subtitle.firstChild,
       style = window.getComputedStyle(inSubtitle),
       firstFontSize = style.getPropertyValue("font-size");
@@ -57,23 +53,10 @@ function main() {
     subtitleArray.map((word, index) => {
       const span = document.createElement("SPAN");
 
-      if (hasWhiteSpace(word)) {
-        word.split(/\s+/).map((element, index) => {
-          const textnode = document.createTextNode(" " + element);
-          if (index === 1) {
-            const br = document.createElement("br");
-            inSubtitle.appendChild(br);
-          }
-          span.appendChild(textnode);
-          inSubtitle.appendChild(span);
-          span.setAttribute("data-tooltip", "Loading...");
-        });
-      } else {
-        const textnode = document.createTextNode(" " + word);
-        span.appendChild(textnode);
-        inSubtitle.appendChild(span);
-        span.setAttribute("data-tooltip", "Loading...");
-      }
+      const textnode = document.createTextNode(" " + word);
+      span.appendChild(textnode);
+      inSubtitle.appendChild(span);
+      span.setAttribute("data-tooltip", "Loading...");
 
       span.addEventListener("mouseenter", () => {
         const howMuchPxGrow = 5;
@@ -101,23 +84,23 @@ function main() {
 }
 
 function startObserver() {
-  if (subtitleButton.getAttribute("aria-pressed") === "true") {
-    let observer = new MutationObserver(mutations => {
-      mutations.forEach(function(mutation) {
-        if (mutation.addedNodes[0].id === "caption-window-1") {
-          main();
-          observer.disconnect();
-        }
-      });
+  let observer = new MutationObserver(mutations => {
+    mutations.forEach(function(mutation) {
+      if (mutation.addedNodes[0].id === "caption-window-1") {
+        main();
+        observer.disconnect();
+      }
     });
-    observer.observe(player, {
-      attributes: true,
-      childList: true,
-      characterData: true
-    });
-  }
+  });
+  observer.observe(player, {
+    attributes: true,
+    childList: true,
+    characterData: true
+  });
 }
 
 subtitleButton.addEventListener("click", () => {
-  startObserver();
+  if (subtitleButton.getAttribute("aria-pressed") === "true") {
+    startObserver();
+  }
 });
