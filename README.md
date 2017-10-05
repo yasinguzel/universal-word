@@ -11,10 +11,11 @@
 ## Çözüm 🎊🎉🎈
 
   ![](https://thumbs.gfycat.com/NippyBlackandwhiteElkhound-size_restricted.gif)
-
-  Basit bir chrome eklentisi ile altyazının üzerine gelerek sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
+  
+  Bu eklenti ile altyazının üzerine gelerek sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
 
 ## Nasıl Yüklenir ? ⬇️
+
   ### Manuel Yükleme
   1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.0.0/universal-word.zip) indirin
   2. ZIP dosyasını açın
@@ -22,6 +23,10 @@
 
   ### Chrome Eklenti Mağazasından Yükleme
   1. [Buradan](https://chrome.google.com/webstore/detail/universal-word/gpdfbmcmghechfppnckabnhojmogdifl?hl=en) direkt yükleyebilirsiniz.
+
+## Nasıl Çalışır ? ⚙️
+
+  Eklentiyi yükledikten sonra altyazıdaki çevirmek istediğiniz sözcüğün üzerine gelmeniz yeterli. Eklenti videoyu otomatik olarak sizin için durduracaktır.
 
 ## Yapılacaklar
 
