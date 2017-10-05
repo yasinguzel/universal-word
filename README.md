@@ -21,7 +21,7 @@
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
   ### Chrome Eklenti Mağazasından Yükleme
-  1. Yükleniyor...
+  1. [Buradan](https://chrome.google.com/webstore/detail/universal-word/gpdfbmcmghechfppnckabnhojmogdifl?hl=en) direkt yükleyebilirsiniz.
 
 ## Yapılacaklar
 
