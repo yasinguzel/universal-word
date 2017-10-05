@@ -4,13 +4,7 @@ let subtitleButton = document.getElementsByClassName(
   "ytp-subtitles-button ytp-button"
 )[0];
 
-let fullScreenButton = document.getElementsByClassName(
-  "ytp-fullscreen-button ytp-button"
-)[0];
-
 let player = document.getElementById("movie_player");
-
-let arrayButton = [subtitleButton, fullScreenButton];
 
 function hasWhiteSpace(s) {
   return /\s/g.test(s);
@@ -106,29 +100,24 @@ function main() {
   });
 }
 
-function runObserver() {
-  let observer = new MutationObserver(mutations => {
-    mutations.forEach(function(mutation) {
-      if (mutation.addedNodes[0].id === "caption-window-1") {
-        main();
-      }
+function startObserver() {
+  if (subtitleButton.getAttribute("aria-pressed") === "true") {
+    let observer = new MutationObserver(mutations => {
+      mutations.forEach(function(mutation) {
+        if (mutation.addedNodes[0].id === "caption-window-1") {
+          main();
+          observer.disconnect();
+        }
+      });
     });
-  });
-  observer.observe(player, {
-    attributes: true,
-    childList: true,
-    characterData: true
-  });
+    observer.observe(player, {
+      attributes: true,
+      childList: true,
+      characterData: true
+    });
+  }
 }
 
-function listenForSubtitleCase(object) {
-  object.addEventListener("click", () => {
-    if (subtitleButton.getAttribute("aria-pressed")) {
-      runObserver();
-    }
-  });
-}
-
-arrayButton.map(object => {
-  listenForSubtitleCase(object);
+subtitleButton.addEventListener("click", () => {
+  startObserver();
 });
