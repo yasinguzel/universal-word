@@ -16,7 +16,7 @@
 
 ## Nasıl Yüklenir ? ⬇️
   ### Manuel Yükleme
-  1. Buradan indirin
+  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.0.0/universal-word.zip) indirin
   2. ZIP dosyasını açın
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
@@ -26,4 +26,5 @@
 ## Yapılacaklar
 
 - [ ] Tam ekranda çalışması sağlanacak.
+- [ ] Dil seçeneği eklenecek.
 - [ ] İngilizce README hazırlanacak.
