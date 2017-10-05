@@ -21,7 +21,7 @@
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
   ### Chrome Eklenti Mağazasından Yükleme
-  1. Buradan direkt yükleyebilirsiniz.
+  1. Yükleniyor...
 
 ## Yapılacaklar
 
