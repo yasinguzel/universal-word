@@ -1,6 +1,6 @@
 # Universal Word
 
-## Problem 🙄
+## 🙄 Problem 
   Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcüklere videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
   ![](https://thumbs.gfycat.com/AgedZanyDartfrog-size_restricted.gif)
@@ -8,13 +8,13 @@
   Altyazıyı youtube'dan otomatik çevirebilir fakat bu seferde anlam bütünlüğü bozuluyor...
 
 
-## Çözüm 🎊🎉🎈
+## 🎊🎉🎈 Çözüm
 
   ![](https://thumbs.gfycat.com/NippyBlackandwhiteElkhound-size_restricted.gif)
   
   Bu eklenti ile altyazının üzerine gelerek 3 anlama kadar sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
 
-## Nasıl Kurulur ? ⬇️
+## ⬇️ Nasıl Kurulur?
 
   ### Manuel Kurma
   1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.0.0/universal-word.zip) indirin
@@ -24,11 +24,11 @@
   ### Chrome Eklenti Mağazasından Kurma
   1. [Buradan](https://chrome.google.com/webstore/detail/universal-word/gpdfbmcmghechfppnckabnhojmogdifl?hl=en) direkt yükleyebilirsiniz.
 
-## Nasıl Çalışır ? ⚙️
+## ⚙️ Nasıl Çalışır? 
 
   Eklentiyi yükledikten sonra altyazıdaki çevirmek istediğiniz sözcüğün üzerine gelmeniz yeterli. Eklenti videoyu otomatik olarak sizin için durduracaktır.
 
-## Yapılacaklar
+## 📝 Yapılacaklar
 
 - [ ] Tam ekranda çalışması sağlanacak.
 - [ ] Dil seçeneği eklenecek.
