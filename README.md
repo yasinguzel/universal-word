@@ -1,7 +1,7 @@
 # Universal Word
 
 ## Problem 🙄
-  Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcüklere videoyu durdurup sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
+  Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcüklere videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
   ![](https://thumbs.gfycat.com/AgedZanyDartfrog-size_restricted.gif)
 
@@ -14,14 +14,14 @@
   
   Bu eklenti ile altyazının üzerine gelerek 3 anlama kadar sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
 
-## Nasıl Yüklenir ? ⬇️
+## Nasıl Kurulur ? ⬇️
 
-  ### Manuel Yükleme
+  ### Manuel Kurma
   1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.0.0/universal-word.zip) indirin
   2. ZIP dosyasını açın
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
-  ### Chrome Eklenti Mağazasından Yükleme
+  ### Chrome Eklenti Mağazasından Kurma
   1. [Buradan](https://chrome.google.com/webstore/detail/universal-word/gpdfbmcmghechfppnckabnhojmogdifl?hl=en) direkt yükleyebilirsiniz.
 
 ## Nasıl Çalışır ? ⚙️
