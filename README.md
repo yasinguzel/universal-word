@@ -12,7 +12,7 @@
 
   ![](https://thumbs.gfycat.com/NippyBlackandwhiteElkhound-size_restricted.gif)
   
-  Bu eklenti ile altyazının üzerine gelerek sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
+  Bu eklenti ile altyazının üzerine gelerek 3 anlama kadar sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
 
 ## Nasıl Yüklenir ? ⬇️
 
