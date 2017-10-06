@@ -1,7 +1,7 @@
 # Universal Word
 
 ## Problem 🙄
-  Youtube'da İngilizce alt yazılı film izlerken bilmediğiniz sözcüklere videoyu durdurup sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
+  Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcüklere videoyu durdurup sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
   ![](https://thumbs.gfycat.com/AgedZanyDartfrog-size_restricted.gif)
 
