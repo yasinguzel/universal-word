@@ -30,6 +30,6 @@
 
 ## 📝 Yapılacaklar
 
-- [ ] Tam ekranda çalışması sağlanacak.
+- [ ] Altyazı açıkken video tam ekran yapıldığında çalışması sağlanacak.(Eğer tam ekrandayken alt yazı açılırsa eklenti çalışıyor.)
 - [ ] Dil seçeneği eklenecek.
 - [ ] İngilizce README hazırlanacak.
