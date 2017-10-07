@@ -13,7 +13,8 @@
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
     "css": ["src/content.css"],
-    "js": ["src/content.js"]
+    "js": ["src/content.js"],
+    "all_frames": true
   }],
 
   "browser_action": {
