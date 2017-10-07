@@ -32,3 +32,6 @@
 
 - [ ] Dil seçeneği eklenecek.
 - [ ] İngilizce README hazırlanacak.
+
+## 👏 Teşekkürler
+Çeviri alt yapısını ücretsiz bir şekilde sağlayan [Glosbe](https://glosbe.com/) 'ye teşekkürler.
