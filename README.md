@@ -17,7 +17,7 @@
 ## ⬇️ Nasıl Kurulur?
 
   ### Manuel Kurma
-  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.0.0/universal-word.zip) indirin
+  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.1.0/universal-wordv1.1.0.zip) indirin
   2. ZIP dosyasını açın
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
