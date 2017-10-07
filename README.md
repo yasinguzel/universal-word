@@ -26,10 +26,9 @@
 
 ## ⚙️ Nasıl Çalışır? 
 
-  Eklentiyi yükledikten sonra altyazıdaki çevirmek istediğiniz sözcüğün üzerine gelmeniz yeterli. Eklenti videoyu otomatik olarak sizin için durduracaktır.
+  Alt yazı ekranda gözüktükten sonra `alt+shit+t` tuş kombinasyonuna basmanız yeterli. Daha sonra alt yazının içindeki çevirisini görmek istediğiniz sözcüğün üzerine gelerek çevirisini görebilirsiniz eklenti sizin için videoyu otomatik olarak durduracaktır.
 
 ## 📝 Yapılacaklar
 
-- [ ] Altyazı açıkken video tam ekran yapıldığında çalışması sağlanacak.(Eğer tam ekrandayken alt yazı açılırsa eklenti çalışıyor.)
 - [ ] Dil seçeneği eklenecek.
 - [ ] İngilizce README hazırlanacak.
