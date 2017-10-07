@@ -1,20 +1,19 @@
-let MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
-let subtitleButton = document.getElementsByClassName(
-  "ytp-subtitles-button ytp-button"
-)[0];
-
-let player = document.getElementById("movie_player");
+function KeyPress(e) {
+  var evtobj = window.event ? event : e
+  if (evtobj.keyCode == 84 && evtobj.altKey && evtobj.shiftKey) {
+    main();
+  }
+}
 
 async function fetchTranslateResult(from, dest, phrase) {
   const response = await fetch(
     "https://glosbe.com/gapi/translate?from=" +
-      from +
-      "&dest=" +
-      dest +
-      "&format=json&phrase=" +
-      phrase +
-      "&pretty=true"
+    from +
+    "&dest=" +
+    dest +
+    "&format=json&phrase=" +
+    phrase +
+    "&pretty=true"
   );
 
   const data = await response.json();
@@ -83,24 +82,4 @@ function main() {
   });
 }
 
-function startObserver() {
-  let observer = new MutationObserver(mutations => {
-    mutations.forEach(function(mutation) {
-      if (mutation.addedNodes[0].id === "caption-window-1") {
-        main();
-        observer.disconnect();
-      }
-    });
-  });
-  observer.observe(player, {
-    attributes: true,
-    childList: true,
-    characterData: true
-  });
-}
-
-subtitleButton.addEventListener("click", () => {
-  if (subtitleButton.getAttribute("aria-pressed") === "true") {
-    startObserver();
-  }
-});
+document.onkeydown = KeyPress;

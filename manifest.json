@@ -10,13 +10,11 @@
     "scripts": ["src/background.js"]
   },
 
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "css": ["src/content.css"],
-      "js": ["src/content.js"]
-    }
-  ],
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["src/content.css"],
+    "js": ["src/content.js"]
+  }],
 
   "browser_action": {
     "default_icon": "icon.png",
