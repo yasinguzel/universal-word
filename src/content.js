@@ -70,7 +70,7 @@ function main() {
 
       span.addEventListener("mouseenter", () => {
 
-        const howMuchPxGrow = 11;
+        const howMuchPxGrow = 5;
         let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
 
         newFontSize += "px";

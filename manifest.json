@@ -5,11 +5,6 @@
   "description": "Translate a word easily in the youtube subtitle",
   "version": "1.1.0",
 
-  "background": {
-    "persistent": false,
-    "scripts": ["src/background.js"]
-  },
-
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
     "css": ["src/content.css"],
