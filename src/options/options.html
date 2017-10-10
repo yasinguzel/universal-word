@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Universal Word Options</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 15% auto;
+            grid-template-rows: 4;
+            grid-gap: 10px 15px;
+        }
+
+        .fromText {
+            grid-column: 1/1;
+        }
+
+        .fromSelect {
+            grid-column: 2/2;
+        }
+
+        .status {
+            grid-column: 1/3;
+        }
+
+        .save {
+            grid-column: 1/3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="fromText">From:</div>
+        <select class="fromSelect" id="from"></select>
+        <div class="destText">Dest:</div>
+        <select class="destSelect" id="dest"></select>
+        <div class="status" id="status"></div>
+        <button class="save" id="save">Save</button>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

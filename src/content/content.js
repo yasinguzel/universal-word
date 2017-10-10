@@ -1,7 +1,16 @@
+let from, dest;
+
 function KeyPress(e) {
   var evtobj = window.event ? event : e
   if (evtobj.keyCode == 84 && evtobj.altKey && evtobj.shiftKey) {
-    main();
+    chrome.storage.sync.get({
+      from: "eng",
+      dest: "tur"
+    }, (items) => {
+      from = items.from;
+      dest = items.dest;
+      main();
+    })
   }
 }
 
@@ -80,7 +89,7 @@ function main() {
           word = specialCharacterEncode(word);
         }
 
-        const result = fetchTranslateResult("eng", "tr", word);
+        const result = fetchTranslateResult(from, dest, word);
 
         result.then(translatedWords =>
           span.setAttribute("data-tooltip", translatedWords)
