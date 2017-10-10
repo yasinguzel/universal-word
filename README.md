@@ -24,9 +24,17 @@
   ### Chrome Eklenti Mağazasından Kurma
   1. [Buradan](https://chrome.google.com/webstore/detail/universal-word/gpdfbmcmghechfppnckabnhojmogdifl?hl=en) direkt yükleyebilirsiniz.
 
-## ⚙️ Nasıl Çalışır? 
-
+## ⚙️ Nasıl Çalışır?
+### 🏁 Nasıl Çalıştırılmaya Başlanır ?
   Alt yazı ekranda gözüktükten sonra `alt+shit+t` tuş kombinasyonuna basmanız yeterli. Daha sonra alt yazının içindeki çevirisini görmek istediğiniz sözcüğün üzerine gelerek çevirisini görebilirsiniz eklenti sizin için videoyu otomatik olarak durduracaktır.
+### 👅 Nasıl Dil Ayarlanır ?
+  1. Ayarlar sayfasına gidin.
+  ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
+  
+  2.İstediğniz dili seçin ardından "save" butonuna basın.
+  
+  ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
+  
 
 ## 📝 Yapılacaklar
 
