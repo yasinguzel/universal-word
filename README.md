@@ -22,7 +22,7 @@
 ### ⬇️ Nasıl Kurulur?
 
   #### Manuel Kurma
-  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.1.0/universal-wordv1.1.0.zip) indirin
+  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.2.0/universal-wordv1.2.0.zip) indirin
   2. ZIP dosyasını açın
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
@@ -68,7 +68,7 @@
 ### ⬇️ How to set up?
 
   #### Manuel
-  1. [Here](https://github.com/yasinguzel/universal-word/releases/download/v1.1.0/universal-wordv1.1.0.zip) download
+  1. [Here](https://github.com/yasinguzel/universal-word/releases/download/v1.2.0/universal-wordv1.2.0.zip) download
   2. Open ZIP file
   3. Drag and drop -> Chrome Extensions (chrome://extensions/)
 
@@ -77,16 +77,16 @@
 
 ### ⚙️ How to work?
   #### 🏁 How to use?
-    * After you see the subtitle press the `alt+shift+t` key combination. 
-    * Move the mouse cursor to a word which you want to translate then it translates it. 
-    Video will pause automatically.
+  * After you see the subtitle press the `alt+shift+t` key combination. 
+  * Move the mouse cursor to a word which you want to translate then it translates it. 
+  Video will pause automatically.
 
   #### 👅 How to set up language?
-    1. Go to the options page.
-    
-    ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
-    
-    2. Select language then click "save" button.
-    
-    ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
+  1. Go to the options page.
+
+  ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
+
+  2. Select language then click "save" button.
+
+  ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
 
