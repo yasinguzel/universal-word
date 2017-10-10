@@ -1,10 +1,10 @@
 # Universal Word
 
 ## Dil Seçin / Select Language
-* [Türkçe](#Türkçe)
-* [English](#English)
+* [Türkçe](#turkce)
+* [English](#english)
 
-## Türkçe
+## Turkce
 ### 🙄 Problem 
   Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcüklere videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
