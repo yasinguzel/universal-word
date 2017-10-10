@@ -30,7 +30,7 @@
 
 ## 📝 Yapılacaklar
 
-- [ ] Dil seçeneği eklenecek.
+- [x] Dil seçeneği eklenecek.
 - [ ] İngilizce README hazırlanacak.
 
 ## 👏 Teşekkürler
