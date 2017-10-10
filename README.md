@@ -1,7 +1,7 @@
 # Universal Word
 
 ## Dil Seçin / Select Language
-* [Türkçe](#turkce)
+* [Türkçe](#-türkçe)
 * [English](#english)
 
 ## 🇹🇷 Türkçe
