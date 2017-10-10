@@ -52,7 +52,10 @@ function specialCharacterEncode(specialCharacter) {
 }
 
 function main() {
-  const subtitleWrapper = document.getElementById("caption-window-1");
+  let subtitleWrapper = document.getElementById("caption-window-1");
+  if (!subtitleWrapper) {
+    subtitleWrapper = document.getElementById("caption-window-_0");
+  }
   const subtitle = document.getElementsByClassName("captions-text")[0];
   const video = document.getElementsByTagName("video")[0];
 
