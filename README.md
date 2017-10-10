@@ -46,6 +46,7 @@
 
 - [x] Dil seçeneği eklenecek.
 - [x] İngilizce README hazırlanacak.
+- [ ] Kısayol değiştirme seçeneği eklenecek.
 
 ### 👏 Teşekkürler
 Çeviri alt yapısını ücretsiz bir şekilde sağlayan [Glosbe](https://glosbe.com/) 'ye teşekkürler.
@@ -90,6 +91,10 @@
 
   ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
 
-  #### 👏 Thanks Glosbe
-  Thanks [Glosbe](https://glosbe.com/) for API.
+### 👏 Thanks Glosbe
+Thanks [Glosbe](https://glosbe.com/) for API.
+
+### 📝 Todo
+
+- [ ] Added option for change shourtcut.
 
