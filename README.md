@@ -77,16 +77,16 @@
 
 ### ⚙️ How to work?
   #### 🏁 How to use?
-    * After you see the subtitle press the `alt+shift+t` key combination. 
-    * Move the mouse cursor to a word which you want to translate then it translates it. 
-    Video will pause automatically.
+  * After you see the subtitle press the `alt+shift+t` key combination. 
+  * Move the mouse cursor to a word which you want to translate then it translates it. 
+  Video will pause automatically.
 
   #### 👅 How to set up language?
-    1. Go to the options page.
-    
-    ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
-    
-    2. Select language then click "save" button.
-    
-    ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
+  1. Go to the options page.
+
+  ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
+
+  2. Select language then click "save" button.
+
+  ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
 
