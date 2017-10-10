@@ -1,7 +1,16 @@
+let from, dest;
+
 function KeyPress(e) {
   var evtobj = window.event ? event : e
   if (evtobj.keyCode == 84 && evtobj.altKey && evtobj.shiftKey) {
-    main();
+    chrome.storage.sync.get({
+      from: "eng",
+      dest: "tur"
+    }, (items) => {
+      from = items.from;
+      dest = items.dest;
+      main();
+    })
   }
 }
 
@@ -12,8 +21,7 @@ async function fetchTranslateResult(from, dest, phrase) {
     "&dest=" +
     dest +
     "&format=json&phrase=" +
-    phrase +
-    "&pretty=true"
+    phrase
   );
 
   const data = await response.json();
@@ -35,12 +43,21 @@ async function fetchTranslateResult(from, dest, phrase) {
   return threeResult;
 }
 
+function specialCharacterEncode(specialCharacter) {
+  specialCharacter = specialCharacter.split("");
+  var index = specialCharacter.indexOf("'");
+  specialCharacter[index] = "%27";
+  specialCharacter = specialCharacter.join("");
+  return specialCharacter;
+}
+
 function main() {
   const subtitleWrapper = document.getElementById("caption-window-1");
   const subtitle = document.getElementsByClassName("captions-text")[0];
   const video = document.getElementsByTagName("video")[0];
 
   subtitleWrapper.addEventListener("mouseenter", () => {
+
     video.pause();
     const subtitleArray = subtitle.firstChild.textContent.trim().split(/\s+/);
     const inSubtitle = subtitle.firstChild,
@@ -50,21 +67,29 @@ function main() {
     inSubtitle.innerHTML = "";
 
     subtitleArray.map((word, index) => {
-      const span = document.createElement("SPAN");
 
+      const span = document.createElement("SPAN");
       const textnode = document.createTextNode(" " + word);
+
       span.appendChild(textnode);
+
       inSubtitle.appendChild(span);
+
       span.setAttribute("data-tooltip", "Loading...");
 
       span.addEventListener("mouseenter", () => {
+
         const howMuchPxGrow = 5;
         let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
 
         newFontSize += "px";
         span.style.fontSize = newFontSize;
 
-        const result = fetchTranslateResult("eng", "tr", word);
+        if (word.includes("'")) {
+          word = specialCharacterEncode(word);
+        }
+
+        const result = fetchTranslateResult(from, dest, word);
 
         result.then(translatedWords =>
           span.setAttribute("data-tooltip", translatedWords)
