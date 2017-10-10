@@ -22,7 +22,7 @@
 ### ⬇️ Nasıl Kurulur?
 
   #### Manuel Kurma
-  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.2.0/universal-wordv1.2.0.zip) indirin
+  1. [Buradan](https://github.com/yasinguzel/universal-word/releases/download/v1.2.1/universal-wordv1.2.1.zip) indirin
   2. ZIP dosyasını açın
   3. Dosyayı sürükleyip bırakın -> Chrome Extensions (chrome://extensions/)
 
@@ -68,7 +68,7 @@
 ### ⬇️ How to set up?
 
   #### Manuel
-  1. [Here](https://github.com/yasinguzel/universal-word/releases/download/v1.2.0/universal-wordv1.2.0.zip) download
+  1. [Here](https://github.com/yasinguzel/universal-word/releases/download/v1.2.1/universal-wordv1.2.1.zip) download
   2. Open ZIP file
   3. Drag and drop -> Chrome Extensions (chrome://extensions/)
 
