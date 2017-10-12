@@ -1,5 +1,7 @@
 # Universal Word
 
+![perfect](https://user-images.githubusercontent.com/16020123/31504060-174ac44e-af7a-11e7-9a4d-55d949de1240.gif)
+
 ## Dil Seçin / Select Language
 * [Türkçe](#-türkçe)
 * [English](#english)
