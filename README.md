@@ -49,6 +49,7 @@
 - [x] Dil seçeneği eklenecek.
 - [x] İngilizce README hazırlanacak.
 - [ ] Kısayol değiştirme seçeneği eklenecek.
+- [ ] API'ye gönderilen çoğul İngilizce sözcükler tekil yapılıp gönderilecek.
 
 ### 👏 Teşekkürler
 Çeviri alt yapısını ücretsiz bir şekilde sağlayan [Glosbe](https://glosbe.com/) 'ye teşekkürler.
