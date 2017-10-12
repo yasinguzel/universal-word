@@ -64,7 +64,7 @@
 
   ![](https://user-images.githubusercontent.com/16020123/31394887-188f5a6a-ade8-11e7-9883-9f26ade57830.gif)
   
-  That extension can translate a word very easily 🎊🎉🎈
+  That extension can easily translate a word in the subtitle to multiple languages. 🎊🎉🎈
 
 ### ⬇️ How to set up?
 
