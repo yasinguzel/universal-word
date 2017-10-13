@@ -7,6 +7,10 @@
 * [English](#english)
 
 ## 🇹🇷 Türkçe
+### 📰 İncelemeler
+
+[![Webrazzi](https://bkmexpress.com.tr/wp-content/uploads/2016/08/webrazzi.png)](https://webrazzi.com/2017/10/13/universal-world/)
+
 ### 🙄 Problem 
   Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcük gördüğünüz zaman videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
@@ -55,6 +59,10 @@
 Çeviri alt yapısını ücretsiz bir şekilde sağlayan [Glosbe](https://glosbe.com/) 'ye teşekkürler.
 
 ## English
+
+### 📰 Reviews
+
+[![Webrazzi](https://bkmexpress.com.tr/wp-content/uploads/2016/08/webrazzi.png)](https://webrazzi.com/2017/10/13/universal-world/)
 
 ### 🙄 Problem 
   When you watching the video on youtube which has different language subtitle, stop the video for each word which you don't know. That can be annoying.
