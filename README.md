@@ -9,7 +9,8 @@
 ## 🇹🇷 Türkçe
 ### 📰 İncelemeler
 
-[![Webrazzi](https://bkmexpress.com.tr/wp-content/uploads/2016/08/webrazzi.png)](https://webrazzi.com/2017/10/13/universal-world/)
+[![Webrazzi](https://pbs.twimg.com/profile_images/661545729584943104/fsIId8WQ.png)](https://webrazzi.com/2017/10/13/universal-world/)
+[![Entretenimiento Digital](http://onedigital.mx/ww3/wp-content/uploads/2014/04/logo5001.jpg)](http://onedigital.mx/ww3/2017/10/13/universal-word-extension-que-permite-traducir-los-subtitulos-de-youtube/)
 
 ### 🙄 Problem 
   Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcük gördüğünüz zaman videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
@@ -62,7 +63,8 @@
 
 ### 📰 Reviews
 
-[![Webrazzi](https://bkmexpress.com.tr/wp-content/uploads/2016/08/webrazzi.png)](https://webrazzi.com/2017/10/13/universal-world/)
+[![Webrazzi](https://pbs.twimg.com/profile_images/661545729584943104/fsIId8WQ.png)](https://webrazzi.com/2017/10/13/universal-world/)
+[![Entretenimiento Digital](http://onedigital.mx/ww3/wp-content/uploads/2014/04/logo5001.jpg)](http://onedigital.mx/ww3/2017/10/13/universal-word-extension-que-permite-traducir-los-subtitulos-de-youtube/)
 
 ### 🙄 Problem 
   When you watching the video on youtube which has different language subtitle, stop the video for each word which you don't know. That can be annoying.
