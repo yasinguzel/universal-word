@@ -53,15 +53,18 @@ function specialCharacterEncode(specialCharacter) {
 
 function main() {
   let subtitleWrapper = document.getElementById("caption-window-1");
+
   if (!subtitleWrapper) {
     subtitleWrapper = document.getElementById("caption-window-_0");
   }
-  const subtitle = document.getElementsByClassName("captions-text")[0];
+
   const video = document.getElementsByTagName("video")[0];
 
   subtitleWrapper.addEventListener("mouseenter", () => {
 
     video.pause();
+
+    const subtitle = document.getElementsByClassName("captions-text")[0];
     const subtitleArray = subtitle.firstChild.textContent.trim().split(/\s+/);
     const inSubtitle = subtitle.firstChild,
       style = window.getComputedStyle(inSubtitle),

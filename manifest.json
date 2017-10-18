@@ -3,11 +3,11 @@
 
   "name": "Universal Word",
   "description": "Translate a word easily in the youtube subtitle",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "options_ui": {
     "page": "src/options/options.html",
     "chrome_style": true,
-    "open_in_tab": false
+    "open_in_tab": true
   },
 
   "content_scripts": [{
