@@ -2,6 +2,10 @@
 
 ![perfect](https://user-images.githubusercontent.com/16020123/31504060-174ac44e-af7a-11e7-9a4d-55d949de1240.gif)
 
+<a href="https://www.patreon.com/yasinguzel">
+  <img src="https://camo.githubusercontent.com/bd0218ae6d0e95a38e8f4a73a70ad9d4b0ebda23/68747470733a2f2f73332d75732d776573742d312e616d617a6f6e6177732e636f6d2f70617472656f6e2d7265776172642d696d616765732f313533373730342e706e67">
+</a>
+
 ## Dil Seçin / Select Language
 * [Türkçe](#-türkçe)
 * [English](#english)
