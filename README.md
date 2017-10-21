@@ -6,11 +6,15 @@
   <img src="https://camo.githubusercontent.com/bd0218ae6d0e95a38e8f4a73a70ad9d4b0ebda23/68747470733a2f2f73332d75732d776573742d312e616d617a6f6e6177732e636f6d2f70617472656f6e2d7265776172642d696d616765732f313533373730342e706e67">
 </a>
 
+# 🥇 Gold Server Supporter
+  ## [Adem İlter](https://github.com/ademilter)
+
 ## Dil Seçin / Select Language
 * [Türkçe](#-türkçe)
 * [English](#english)
 
 ## 🇹🇷 Türkçe
+
 ### 📰 İncelemeler
 <a href="https://webrazzi.com/2017/10/13/universal-world/">
   <img src="https://pbs.twimg.com/profile_images/661545729584943104/fsIId8WQ.png" height="150">
