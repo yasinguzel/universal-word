@@ -15,7 +15,7 @@
   <img src="http://onedigital.mx/ww3/wp-content/uploads/2014/04/logo5001.jpg" width="150">
 </a>
 
-### 🙄 Problem 
+### 🙄 Problem
   Youtube'da İngilizce alt yazılı video izlerken bilmediğiniz sözcük gördüğünüz zaman videoyu durdurup her sözcüğün çevirisine bakmak bazen can sıkıcı olabilir.
 
   ![](https://user-images.githubusercontent.com/16020123/31394850-04471cdc-ade8-11e7-8c2d-dc500231ec33.gif)
@@ -26,7 +26,7 @@
 ### 🎊🎉🎈 Çözüm
 
   ![](https://user-images.githubusercontent.com/16020123/31394887-188f5a6a-ade8-11e7-9883-9f26ade57830.gif)
-  
+
   Bu eklenti ile altyazının üzerine gelerek 3 anlama kadar sözcüğün çevirisini görebilmek mümkün! 🎊🎉🎈
 
 ### ⬇️ Nasıl Kurulur?
@@ -42,16 +42,16 @@
 ### ⚙️ Nasıl Çalışır?
 #### 🏁 Nasıl Çalıştırılmaya Başlanır ?
   Alt yazı ekranda gözüktükten sonra `alt+shift+t` tuş kombinasyonuna basmanız yeterli. Daha sonra alt yazının içindeki çevirisini görmek istediğiniz sözcüğün üzerine gelerek çevirisini görebilirsiniz eklenti sizin için videoyu otomatik olarak durduracaktır.
-  
+
 #### 👅 Nasıl Dil Ayarlanır ?
   1. Ayarlar sayfasına gidin.
-  
+
   ![](https://user-images.githubusercontent.com/16020123/31394709-aaac26d6-ade7-11e7-8fa4-b08d9a3042da.png)
-  
+
   2.İstediğiniz dili seçin ardından "save" butonuna basın.
-  
+
   ![](https://user-images.githubusercontent.com/16020123/31394736-ba99037a-ade7-11e7-9e60-3a457bb6d607.png)
-  
+
 ### 📝 Yapılacaklar
 
 - [x] Dil seçeneği eklenecek.
@@ -73,7 +73,7 @@
   <img src="http://onedigital.mx/ww3/wp-content/uploads/2014/04/logo5001.jpg" width="150">
 </a>
 
-### 🙄 Problem 
+### 🙄 Problem
   When you watching the video on youtube which has different language subtitle, stop the video for each word which you don't know. That can be annoying.
 
   ![](https://user-images.githubusercontent.com/16020123/31394850-04471cdc-ade8-11e7-8c2d-dc500231ec33.gif)
@@ -83,7 +83,7 @@
 ### 🎊🎉🎈 Solution
 
   ![](https://user-images.githubusercontent.com/16020123/31394887-188f5a6a-ade8-11e7-9883-9f26ade57830.gif)
-  
+
   That extension can easily translate a word in the subtitle to multiple languages. 🎊🎉🎈
 
 ### ⬇️ How to set up?
@@ -98,8 +98,8 @@
 
 ### ⚙️ How to work?
   #### 🏁 How to use?
-  * After you see the subtitle press the `alt+shift+t` key combination. 
-  * Move the mouse cursor to a word which you want to translate then it translates it. 
+  * After you see the subtitle press the `alt+shift+t` key combination.
+  * Move the mouse cursor to a word which you want to translate then it translates it.
   Video will pause automatically.
 
   #### 👅 How to set up language?

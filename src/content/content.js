@@ -1,27 +1,50 @@
 let from, dest;
 
 function KeyPress(e) {
-  var evtobj = window.event ? event : e
+  var evtobj = window.event ? event : e;
   if (evtobj.keyCode == 84 && evtobj.altKey && evtobj.shiftKey) {
-    chrome.storage.sync.get({
-      from: "eng",
-      dest: "tur"
-    }, (items) => {
-      from = items.from;
-      dest = items.dest;
-      main();
-    })
+    chrome.storage.sync.get(
+      {
+        from: "eng",
+        dest: "tur"
+      },
+      items => {
+        from = items.from;
+        dest = items.dest;
+        main();
+      }
+    );
   }
 }
 
+function specialCharacterCheckAndEncode(word) {
+  let specialCharactersAndEncodes = [
+    { specialCharacter: "'", encode: "%27" },
+    { specialCharacter: "[", encode: "%5B" },
+    { specialCharacter: "]", encode: "%5D" }
+  ];
+
+  specialCharactersAndEncodes.map(specialCharacterAndEncode => {
+    if (word.includes(specialCharacterAndEncode.specialCharacter)) {
+      word = word.split("");
+      let index = word.indexOf(specialCharacterAndEncode.specialCharacter);
+      word[index] = specialCharacterAndEncode.encode;
+      word = word.join("");
+    }
+  });
+
+  return word;
+}
+
 async function fetchTranslateResult(from, dest, phrase) {
+  phrase = specialCharacterCheckAndEncode(phrase);
   const response = await fetch(
     "https://glosbe.com/gapi/translate?from=" +
-    from +
-    "&dest=" +
-    dest +
-    "&format=json&phrase=" +
-    phrase
+      from +
+      "&dest=" +
+      dest +
+      "&format=json&phrase=" +
+      phrase
   );
 
   const data = await response.json();
@@ -43,17 +66,8 @@ async function fetchTranslateResult(from, dest, phrase) {
   return threeResult;
 }
 
-function specialCharacterEncode(specialCharacter) {
-  specialCharacter = specialCharacter.split("");
-  var index = specialCharacter.indexOf("'");
-  specialCharacter[index] = "%27";
-  specialCharacter = specialCharacter.join("");
-  return specialCharacter;
-}
-
 function main() {
   let subtitleWrapper = document.getElementById("caption-window-1");
-
   if (!subtitleWrapper) {
     subtitleWrapper = document.getElementById("caption-window-_0");
   }
@@ -61,7 +75,6 @@ function main() {
   const video = document.getElementsByTagName("video")[0];
 
   subtitleWrapper.addEventListener("mouseenter", () => {
-
     video.pause();
 
     const subtitle = document.getElementsByClassName("captions-text")[0];
@@ -73,7 +86,6 @@ function main() {
     inSubtitle.innerHTML = "";
 
     subtitleArray.map((word, index) => {
-
       const span = document.createElement("SPAN");
       const textnode = document.createTextNode(" " + word);
 
@@ -84,16 +96,11 @@ function main() {
       span.setAttribute("data-tooltip", "Loading...");
 
       span.addEventListener("mouseenter", () => {
-
         const howMuchPxGrow = 5;
         let newFontSize = parseInt(firstFontSize) + howMuchPxGrow;
 
         newFontSize += "px";
         span.style.fontSize = newFontSize;
-
-        if (word.includes("'")) {
-          word = specialCharacterEncode(word);
-        }
 
         const result = fetchTranslateResult(from, dest, word);
 
