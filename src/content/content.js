@@ -102,11 +102,13 @@ function main() {
         newFontSize += "px";
         span.style.fontSize = newFontSize;
 
-        const result = fetchTranslateResult(from, dest, word);
+        if (span.getAttribute("data-tooltip") === "Loading...") {
+          const result = fetchTranslateResult(from, dest, word);
 
-        result.then(translatedWords =>
-          span.setAttribute("data-tooltip", translatedWords)
-        );
+          result.then(translatedWords => {
+            span.setAttribute("data-tooltip", translatedWords);
+          });
+        }
       });
 
       span.addEventListener("mouseleave", () => {
