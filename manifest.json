@@ -3,7 +3,7 @@
 
   "name": "Universal Word",
   "description": "Translate a word easily in the youtube subtitle",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "options_ui": {
     "page": "src/options/options.html",
     "chrome_style": true,
@@ -18,7 +18,8 @@
   }],
 
   "permissions": [
-    "storage"
+    "storage",
+    "identity"
   ],
 
   "browser_action": {
