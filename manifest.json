@@ -10,17 +10,16 @@
     "open_in_tab": true
   },
 
-  "content_scripts": [{
-    "matches": ["http://*/*", "https://*/*"],
-    "css": ["src/content/content.css"],
-    "js": ["src/content/content.js"],
-    "all_frames": true
-  }],
-
-  "permissions": [
-    "storage",
-    "identity"
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["src/content/content.css"],
+      "js": ["src/content/content.js"],
+      "all_frames": true
+    }
   ],
+
+  "permissions": ["storage"],
 
   "browser_action": {
     "default_icon": "icon.png"

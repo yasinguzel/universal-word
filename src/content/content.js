@@ -17,27 +17,7 @@ function KeyPress(e) {
   }
 }
 
-function specialCharacterCheckAndEncode(word) {
-  let specialCharactersAndEncodes = [
-    { specialCharacter: "'", encode: "%27" },
-    { specialCharacter: "[", encode: "%5B" },
-    { specialCharacter: "]", encode: "%5D" }
-  ];
-
-  specialCharactersAndEncodes.map(specialCharacterAndEncode => {
-    if (word.includes(specialCharacterAndEncode.specialCharacter)) {
-      word = word.split("");
-      let index = word.indexOf(specialCharacterAndEncode.specialCharacter);
-      word[index] = specialCharacterAndEncode.encode;
-      word = word.join("");
-    }
-  });
-
-  return word;
-}
-
 async function fetchTranslateResult(from, dest, phrase) {
-  phrase = specialCharacterCheckAndEncode(phrase);
   const response = await fetch(
     "https://glosbe.com/gapi/translate?from=" +
       from +
@@ -103,6 +83,7 @@ function main() {
         span.style.fontSize = newFontSize;
 
         if (span.getAttribute("data-tooltip") === "Loading...") {
+          word = escape(word);
           const result = fetchTranslateResult(from, dest, word);
 
           result.then(translatedWords => {
