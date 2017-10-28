@@ -6,8 +6,7 @@
   "version": "1.2.2",
   "options_ui": {
     "page": "src/options/options.html",
-    "chrome_style": true,
-    "open_in_tab": true
+    "chrome_style": true
   },
 
   "content_scripts": [
