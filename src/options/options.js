@@ -1,59 +1,162 @@
-async function fetchISO6393() {
-    const response = await fetch(
-        "https://gist.githubusercontent.com/yasinguzel/4f62dccc3b4760f4b0b1c830d9c99fb1/raw/cbecc380bea16621a12b7fbc03ebcdbc44516f50/ISO6393.json"
-    );
+languages = {
+  af: "afrikaans",
+  sq: "albanian",
+  am: "amharic",
+  ar: "arabic",
+  hy: "armenian",
+  az: "azerbaijani",
+  eu: "basque",
+  be: "belarusian",
+  bn: "bengali",
+  bs: "bosnian",
+  bg: "bulgarian",
+  ca: "catalan",
+  ceb: "cebuano",
+  ny: "chichewa",
+  "zh-cn": "chinese (simplified)",
+  "zh-tw": "chinese (traditional)",
+  co: "corsican",
+  hr: "croatian",
+  cs: "czech",
+  da: "danish",
+  nl: "dutch",
+  en: "english",
+  eo: "esperanto",
+  et: "estonian",
+  tl: "filipino",
+  fi: "finnish",
+  fr: "french",
+  fy: "frisian",
+  gl: "galician",
+  ka: "georgian",
+  de: "german",
+  el: "greek",
+  gu: "gujarati",
+  ht: "haitian creole",
+  ha: "hausa",
+  haw: "hawaiian",
+  iw: "hebrew",
+  hi: "hindi",
+  hmn: "hmong",
+  hu: "hungarian",
+  is: "icelandic",
+  ig: "igbo",
+  id: "indonesian",
+  ga: "irish",
+  it: "italian",
+  ja: "japanese",
+  jw: "javanese",
+  kn: "kannada",
+  kk: "kazakh",
+  km: "khmer",
+  ko: "korean",
+  ku: "kurdish (kurmanji)",
+  ky: "kyrgyz",
+  lo: "lao",
+  la: "latin",
+  lv: "latvian",
+  lt: "lithuanian",
+  lb: "luxembourgish",
+  mk: "macedonian",
+  mg: "malagasy",
+  ms: "malay",
+  ml: "malayalam",
+  mt: "maltese",
+  mi: "maori",
+  mr: "marathi",
+  mn: "mongolian",
+  my: "myanmar (burmese)",
+  ne: "nepali",
+  no: "norwegian",
+  ps: "pashto",
+  fa: "persian",
+  pl: "polish",
+  pt: "portuguese",
+  pa: "punjabi",
+  ro: "romanian",
+  ru: "russian",
+  sm: "samoan",
+  gd: "scots gaelic",
+  sr: "serbian",
+  st: "sesotho",
+  sn: "shona",
+  sd: "sindhi",
+  si: "sinhala",
+  sk: "slovak",
+  sl: "slovenian",
+  so: "somali",
+  es: "spanish",
+  su: "sundanese",
+  sw: "swahili",
+  sv: "swedish",
+  tg: "tajik",
+  ta: "tamil",
+  te: "telugu",
+  th: "thai",
+  tr: "turkish",
+  uk: "ukrainian",
+  ur: "urdu",
+  uz: "uzbek",
+  vi: "vietnamese",
+  cy: "welsh",
+  xh: "xhosa",
+  yi: "yiddish",
+  yo: "yoruba",
+  zu: "zulu",
+  fil: "Filipino",
+  he: "Hebrew"
+};
 
-    const data = await response.json();
+function addOptions(select, name, value) {
+  let option = document.createElement("option");
+  let text = document.createTextNode(name);
 
-    return data;
-}
+  option.appendChild(text);
+  option.value = value;
 
-function addedISO3933Optionss(select, name, value) {
-    let option = document.createElement("option");
-    let text = document.createTextNode(name);
-
-    option.appendChild(text);
-    option.value = value;
-
-    select.appendChild(option);
+  select.appendChild(option);
 }
 
 function saveOptions() {
-    let from = document.getElementById("from").value;
-    let dest = document.getElementById("dest").value;
+  let from = document.getElementById("from").value;
+  let dest = document.getElementById("dest").value;
 
-    chrome.storage.sync.set({
-        from: from,
-        dest: dest
-    }, () => {
-        let status = document.getElementById('status');
-        status.textContent = 'Options saved.';
-        setTimeout(function () {
-            status.textContent = '';
-        }, 750);
-    })
+  chrome.storage.sync.set(
+    {
+      from: from,
+      dest: dest
+    },
+    () => {
+      let status = document.getElementById("status");
+      status.textContent = "Options saved.";
+      setTimeout(function() {
+        status.textContent = "";
+      }, 750);
+    }
+  );
 }
 
 function restoreOptions() {
-    chrome.storage.sync.get({
-        from: "eng",
-        dest: "tur"
-    }, (items) => {
-        document.getElementById("from").value = items.from;
-        document.getElementById("dest").value = items.dest;
-    })
+  chrome.storage.sync.get(
+    {
+      from: "en",
+      dest: "tr"
+    },
+    items => {
+      document.getElementById("from").value = items.from;
+      document.getElementById("dest").value = items.dest;
+    }
+  );
 }
 
 let fromSelect = document.getElementById("from");
 let destSelect = document.getElementById("dest");
 
-fetchISO6393().then((iso6393Codes) => {
-    Object.values(iso6393Codes).map((iso6393Code) => {
-        addedISO3933Optionss(fromSelect, iso6393Code.name, iso6393Code.iso6393);
-        addedISO3933Optionss(destSelect, iso6393Code.name, iso6393Code.iso6393);
-    })
-}).then(() => {
-    restoreOptions();
-})
+Object.keys(languages).map(language => {
+  addOptions(fromSelect, languages[language], language);
+  addOptions(destSelect, languages[language], language);
+});
+
+restoreOptions();
 
 document.getElementById("save").addEventListener("click", saveOptions);
