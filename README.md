@@ -8,6 +8,9 @@
 
 # 🥇 Gold Server Supporter  
   * [Adem İlter](https://github.com/ademilter)
+  
+# 🥉 Bronze Server Supporter
+  * [Anıl İyidoğan](https://github.com/aniliyidogan)
 
 ## Dil Seçin / Select Language
 * [Türkçe](#-türkçe)
